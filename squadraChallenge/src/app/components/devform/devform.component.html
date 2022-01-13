@@ -1,0 +1,29 @@
+     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Nome completo</mat-label>
+                    <input matInput formControlName="name" id="name" type="text" class="form-controle">
+                </mat-form-field></td>
+            </tr></table>
+        </div>
+            
+        <div class="form-group" style="padding-bottom: 25px;">
+            <mat-label for="file">Arquivo </mat-label>
+            <input formControlName="file" id="file" type="file" 
+                class="form-control"
+                (change)="onFileChanged($event)">
+            <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+                <div *ngIf="f['file'].errors && f['file'].errors['required']">
+                    Arquivo requerido.</div>
+            </div>
+        </div>
+                
+        <div style="text-align: center;">
+            <button mat-raised-button style="background-color: #1b28bd; color: white;" 
+            type="submit">Enviar</button>
+            <a  mat-raised-button style="background-color: #1b28bd; color: white;; margin-left: 10px;" 
+            (click)="closeButton()"> Voltar </a>
+        </div>
+    </form>

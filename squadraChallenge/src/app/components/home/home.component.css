@@ -1,0 +1,44 @@
+#table1 {
+    width: 100%;
+    margin: auto;
+}
+
+#allColumns{
+    width: 100%;
+    text-align: center;
+}
+
+#headDevList{
+    padding-top: 3%;
+    width: 100%;
+}
+
+#headlist{
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+}
+
+#textHead{
+    color: #000000;
+    font-weight: bold;
+}
+
+#addButton{
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#container{
+    width: 95%;
+    margin-left: 2%;
+}
+
+.example-header-image {
+
+    background-size: cover;
+    margin-bottom: 0px;
+    border-radius:25px; 
+    align-items: center;
+    margin-top: 7px;
+  }  

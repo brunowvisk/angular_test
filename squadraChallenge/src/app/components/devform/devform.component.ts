@@ -50,11 +50,11 @@ export class DevformComponent implements OnInit {
 
   onSubmit(){
 
-    // this.devService.postNewPet(this.petForm.value).subscribe(res => {
-    //   console.log("New pet created")
-    //   this.dialog.closeAll();
-    //   window.parent.location.reload();
-    // })
+    this.devService.PostNewDev(this.myForm.value).subscribe(res => {
+      console.log("Novo desenvolvedor adicionado!")
+      this.dialog.closeAll();
+      window.parent.location.reload();
+    })
 }
 
 

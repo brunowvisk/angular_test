@@ -61,6 +61,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   deleteDev(id: string){
+    if(window.confirm('Deseja realmente excluir este desenvolvedor?')){
+      this.devService.deleteDev(id).subscribe(data => {
+        console.log(data);
+        window.location.reload();
+      })
+    }
 
   }
 

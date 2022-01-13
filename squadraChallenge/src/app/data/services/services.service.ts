@@ -28,14 +28,13 @@ export class ServicesService {
   }
 
   deleteDev(id: string): Observable<ideveloperModel> {
-    return this.httpClient.delete<ideveloperModel>(this.endpoint + 'developer/' + id);
+    return this.httpClient.delete<ideveloperModel>(this.endpoint + id);
   }
 
   updateDev(id: string): Observable<ideveloperModel> {
-    return this.httpClient.put<ideveloperModel>(this.endpoint + 'developer/' + id, JSON.stringify(id),
+    return this.httpClient.put<ideveloperModel>(this.endpoint + id, JSON.stringify(id),
     this.httpOptions).pipe(retry(1));
   }
-
 
 
 

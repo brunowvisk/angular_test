@@ -6,6 +6,7 @@ import { ideveloperModel } from 'src/app/data/model/ideveloperModel';
 import { ireturnDefaultModel } from 'src/app/data/model/ireturnDefaultModel';
 import { ServicesService } from 'src/app/data/services/services.service';
 import { DevformComponent } from '../devform/devform.component';
+import { UpdatedevformComponent } from '../updatedevform/updatedevform.component';
 
 @Component({
   selector: 'app-home',
@@ -51,14 +52,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
       width: '60%',
     });
     dialogRef.afterClosed().subscribe((res => {
-      console.log('Form closed!');
+      console.log('Formulário fechado!');
     }))
 
   }
 
-  updateDevForm(){
-
-  }
+  updateDevForm(action: any, obj: { action: any; }) {
+    obj.action = action;
+  
+    const dialogRef = this.dialog.open(UpdatedevformComponent, {
+      width: '60%',
+      data: obj,
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+    });
+  
+    }
 
   deleteDev(id: string){
     if(window.confirm('Deseja realmente excluir este desenvolvedor?')){

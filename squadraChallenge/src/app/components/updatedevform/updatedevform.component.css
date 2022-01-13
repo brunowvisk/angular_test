@@ -1,0 +1,12 @@
+.example-full-width {
+    width: 100%;
+
+  }
+
+  .backButton{
+      align-items: flex-end;
+  }
+
+  #allColumns{
+    width: 100%;
+}

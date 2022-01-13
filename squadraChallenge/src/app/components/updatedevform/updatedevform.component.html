@@ -1,1 +1,29 @@
-<p>updatedevform works!</p>
+<h1>Atualização de dados</h1>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+
+        <table class="example-full-width" cellspacing="0"><tr>
+            <td><mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input matInput id="name" type="text" class="form-controle"
+                value="{{dev.name}}">
+            </mat-form-field></td>
+        </tr></table>
+    </div>
+        
+    <div class="form-group" style="padding-bottom: 25px; text-align: center;">
+        <mat-label for="file">Arquivo </mat-label>
+        <input formControlName="file" id="file" type="file" 
+            class="form-control"
+            (change)="onFileChanged($event)">
+
+    </div>
+            
+    <div style="text-align: center;">
+        <button mat-raised-button style="background-color: #1b28bd; color: white;" 
+        type="submit">Enviar</button>
+        <a  mat-raised-button style="background-color: #1b28bd; color: white;; margin-left: 10px;" 
+        (click)="closeButton()"> Voltar </a>
+    </div>
+</form>
